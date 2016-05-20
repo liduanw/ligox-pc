@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引力-链接世界的力量</title>
+    <style>
+        .box {
+            border: 1px solid #eee;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            display: inline-block;
+            background-color: #eee;
+        }
+
+        .btn {
+            padding: 5px 10px;
+        }
+
+        .content-pane {
+            border: 1px solid red;
+            height: 300px;
+            margin-top: 39px;
+        }
+        .active{
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="span-box">
+        <!--tabs选项-->
+        <div class="tabs-container">
+            <div class="tab-button" ><span class="tab-name">教员</span> <span class="zheSpan">×</span></div>
+        </div>
+
+        <!--内容面板-->
+        <div class="panes-container">
+            <div class="content-pane" id="pane01">
+                面板1
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn">添加span</button>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function(){
+        // 点击tab选项卡改变面板
+        $(".tab-button").click(function () {
+            //切换
+            var index = $(this).index();
+            changeTab(index);
+        });
+
+        $(".zheSpan").click(function(){
+//            $(this).parent().remove();
+            var selectedIndex = $(".zheSpan").index($(this));
+            $(".tab-button").eq(selectedIndex).remove();
+            $(".content-pane").eq(selectedIndex).remove();
+
+            showPrevPane();
+        });
+
+        var spanBox = $(".tab-button").clone(true);
+        $(".tab-button:first").remove();
+
+        var pane = $(".content-pane").clone(true);
+        $(".content-pane:first").remove();
+
+        // 点击添加 tab 和 内容面板
+        $(".btn").click(function () {
+            hideLastTabAndPane();
+            var tabSpan = spanBox.clone(true);
+            var tabsLength = $(".tab-button").length;
+            tabSpan.find('.tab-name').text("tab" + tabsLength);
+            tabSpan.appendTo($(".tabs-container"));
+            var paneDiv = pane.clone(true);
+            paneDiv.text("面板" + tabsLength);
+            paneDiv.appendTo($(".panes-container"));
+
+            $(".tab-button").eq($(".tab-button").length - 1).click();
+        });
+
+//        面板切换效果
+        function changeTab(index) {
+            hideLastTabAndPane(index);
+            $(".tab-button").eq(index).addClass("active");
+            $(".content-pane").eq(index).show();
+
+        }
+
+        //隐藏上一次选中的面板和选项卡
+        function hideLastTabAndPane(index){
+            $(".tab-button").removeClass("active");
+            $(".content-pane").hide();
+            $(".content-pane").eq(index).show();
+        }
+
+        function showPrevPane(){
+            $(".content-pane").hide();
+            $(".content-pane").eq(0).show();
+            $(".tab-button").eq(0).show().addClass("active").siblings().removeClass("active");
+        };
+    })
+</script>
+</body>
+</html>

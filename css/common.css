@@ -1,0 +1,211 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+input,
+textarea,
+p,
+th,
+td {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  height: 100%;
+  max-height: 100%;
+  font-family: -apple-system-font, "Helvetica Neue", Tahoma, "PingFang SC", "lantinghei sc", "Microsoft Yahei", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+.more-add {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  overflow: hidden;
+}
+.header-box {
+  width: 1041px;
+  margin: 0 auto;
+  height: 70px;
+  border-bottom: 1px solid #eee;
+}
+.nav,
+.logo {
+  float: left;
+}
+.logo img {
+  margin-top: 17px;
+}
+.nav {
+  margin-left: 60px;
+}
+.nav li {
+  float: left;
+  padding: 0 25px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 70px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 5px;
+}
+.nav li span {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #0f7ff7;
+}
+.span-width-add {
+  animation: spanWidthAdd 1s forwards;
+}
+.span-width-down {
+  animation: spanWidthDown 1s forwards;
+}
+.log-in {
+  float: right;
+}
+.log-in li {
+  float: left;
+  cursor: pointer;
+  padding: 0 15px;
+  line-height: 70px;
+}
+.log-in li:hover {
+  background-color: #aaa;
+}
+.user-infor {
+  float: right;
+  display: flex;
+}
+.user-news-logo,
+.user-name-logo {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-top: 23px;
+  border-radius: 100%;
+  border: 1px solid #eee;
+}
+.user-news-logo b,
+.user-name-logo b {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.user-infor {
+  display: none;
+}
+.user-news-logo {
+  margin-right: 20px;
+}
+.user-news-logo b {
+  background: url(../img/mail.png) no-repeat center center;
+}
+.user-news-logo span {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  border-radius: 100%;
+  background-color: red;
+  color: #fff;
+  font-size: 10px;
+}
+.user-name-logo {
+  margin-right: 6px;
+}
+.user-name-logo b {
+  background: url(../img/user.png) no-repeat center center;
+}
+.user-name {
+  line-height: 70px;
+  font-size: 14px;
+  color: #cdcdcd;
+}
+.user-out {
+  line-height: 70px;
+  font-size: 12px;
+  color: #0f7ff7;
+  margin-left: 21px;
+}
+@keyframes spanWidthAdd {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes spanWidthDown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    opacity: 0;
+  }
+}
+#main {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+#footer {
+  background-color: #010101;
+  clear: both;
+  color: #fff;
+  padding: 10px 0;
+  width: 100%;
+}
+.footer-box {
+  width: 1041px;
+  margin: 0 auto;
+}
+.footer-box ul {
+  overflow: hidden;
+  width: 25%;
+  margin: 0 auto;
+}
+.footer-box li {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+.footer-box li a {
+  color: #fff;
+  font-size: 12px;
+}
+.copyright {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 12px;
+  text-align: center;
+}
